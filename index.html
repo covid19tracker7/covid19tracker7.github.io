@@ -1,0 +1,158 @@
+<html>
+
+<head>
+	<title>Covid-19 Tracker</title>
+	<meta charset="utf-8">
+	<!--If you want your bootstrap styled website to be responsive on mobile then add the following meta tag to your <head>  element, above the <title>  tag:-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!-- include bootstrap cdn link -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- include jquery link-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!--include popper-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- font-awesome -->
+	<script src="https:////kit.fontawesome.com/1c360d4082.js" crossorigin="anonymous"></script>
+	<!-- main.css stylesheet -->
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel='icon' href='iconsc.ico' type='image/x-icon'/ >
+</head>
+
+<body>
+
+	<h1 class="head">Covid-19 Tracker</h1>
+	<br>
+	<div class="container mt-2">
+
+
+		
+		<h2 class="world">World Wide:</h2>
+		<div class="row d-flex justify-content-around">
+			<div class="col-lg-3 col-md-6 col-sm-12">
+				<div class="card text-white bg-danger mb-3">
+					<div class="card-header">CONFIRMED</div>
+					<div class="card-body">
+						<h4 class="mypanel"></h4>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-3 col-md-6 col-sm-12">
+				<div class="card text-white bg-primary mb-3">
+					<div class="card-header">ACTIVE</div>
+					<div class="card-body">
+						<h4 class="mypanel2"></h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 col-sm-12">
+				<div class="card text-white bg-success mb-3">
+					<div class="card-header">RECOVERED</div>
+					<div class="card-body">
+						<h4 class="mypanel3"></h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 col-sm-12">
+				<div class="card text-white bg-secondary mb-3">
+					<div class="card-header">DEATHS</div>
+					<div class="card-body">
+						<h4 class="mypanel4"></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+
+
+
+
+
+	<div class="container mt-5">
+
+
+		<!-- <div class="container"> -->
+			<h2 class="world">India:</h2>
+		<div class="row d-flex justify-content-around">
+			<div class="col-lg-3 col-md-6 col-sm-12">
+				<div class="card text-white bg-danger mb-3">
+					<div class="card-header">CONFIRMED</div>
+					<div class="card-body">
+						<h4 class="card-title" id="confirmed"></h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-12">
+				<div class="card text-white bg-primary mb-3">
+					<div class="card-header">ACTIVE</div>
+					<div class="card-body">
+						<h4 class="card-title" id="active"></h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-12">
+				<div class="card text-white bg-success mb-3">
+					<div class="card-header">RECOVERED</div>
+					<div class="card-body">
+						<h4 class="card-title" id="recovered"></h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-12">
+				<div class="card text-white bg-secondary mb-3">
+					<div class="card-header">DEATHS</div>
+					<div class="card-body">
+						<h4 class="card-title" id="deaths"></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	<script>
+		$.getJSON('https://coronavirus-19-api.herokuapp.com/countries/World', function (data) {
+
+			var text = `${data.cases}`
+			var text2 = `${data.active}`
+			var text3 = `${data.recovered}`
+			var text4 = `${data.deaths}`
+
+
+			$(".mypanel").html(text);
+			$(".mypanel2").html(text2);
+			$(".mypanel3").html(text3);
+			$(".mypanel4").html(text4);
+		});
+	</script>
+
+
+
+	<script type="text/javascript" src="home.js"></script>
+	<script type="text/javascript" src="world.js"></script>
+</body>
+
+</html>
